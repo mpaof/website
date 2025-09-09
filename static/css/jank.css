@@ -1,0 +1,21 @@
+body * {
+  font-family: 'Agave Nerd Font' !important;
+  font-weight: 200 !important;
+  line-height: 1.05;
+}
+p, h1, h2, h3, h4, h5, h6, div,
+.counter
+{
+  color: #e6e6e6
+}
+#root, body, html {
+  background-color: #1b1b1b !important;
+}
+a, a:active, a:visited {
+  color: #c6c6ff
+}
+
+#hi {
+  text-align: center;
+}
+

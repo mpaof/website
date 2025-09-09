@@ -1,0 +1,7 @@
+what to do
+
+take all the .ntdl and turn them into an array of sorts
+make the ntdl a new file, and have it constantly spit out a shuffled array
+
+i don't need to actually do anything either with transferring mfot
+i can edit the repos remotely via vscode

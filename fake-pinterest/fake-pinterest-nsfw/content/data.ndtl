@@ -1,0 +1,43 @@
+var DATABASE = `FAKE-PINTEREST
+  LINK : ../index.html
+  TYPE : article
+${
+
+(() => {
+let arr = [];
+
+function formatI(i) {
+  if(i.length > 4) { return null; }
+  return `${ '0'.repeat(4 - i.toString().length) }${ i }`
+}
+
+for(let i = 0; i <= 54; i++) {
+  arr[i] = `
+${ formatI(i) }
+  TYPE : image
+  FILE : ${ formatI(i) }.jpg
+`
+}
+
+for (let i = arr.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [arr[i], arr[j]] = [arr[j], arr[i]];
+}
+
+// arr.length = 418;
+return arr.join('\n');
+
+})()
+}
+`;
+
+/*
+
+// use this block between the for statement and [return arr] to sort from 0 to whatever
+arr = arr.sort((a, b) => {
+  const numA = parseInt(a.match(/FILE\s*:\s*(\d+)\.jpg/)[1], 10);
+  const numB = parseInt(b.match(/FILE\s*:\s*(\d+)\.jpg/)[1], 10);
+  return numA - numB;
+});
+
+*/

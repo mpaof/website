@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>~/gamble.html</title>
+
+  <style>
+    .goback {
+      top: 0%;
+    }
+
+    @font-face {
+      font-family: Fira Code;
+      font-style: normal;
+      font-weight: 300;
+      src: local("Fira Code"), url(../static/media/FiraCode-Light.e37fbea8ec98ce1ed3c5.woff) format("woff");
+    }
+    @font-face {
+      font-family: Fira Code;
+      font-style: normal;
+      font-weight: 500;
+      src: local("Fira Code"), url(../static/media/FiraCode-Regular.19a2738eed5f65644ea5.woff) format("woff");
+    }
+    body * {
+      font-family: Fira Code;
+      font-weight: 300;
+      font-size: 16 !important;
+    }
+  </style>
+</head>
+<body>
+  <a href="../index.html" style="margin-top: 0px; position: absolute;">go back</a><br>
+   <div id="bankrupted"></div>
+  <p>⠄⠄⠄⣠⢴⢴⡴⣤⢤⣄⠄⠄⢀⠄⣀⡤⣴⣺⡽⣯⡷⣦⣄⠄⠄⠄<br>
+⠄⣔⢞⢝⢝⠽⡽⣽⣳⢿⡽⣏⣗⢗⢯⢯⣗⡯⡿⣽⢽⣷⣟⣷⣄ ⠄<br>
+⠄⡗⡟⡼⣸⣁⢋⠎⠎⢯⢯⡧⡫⣎⡽⡹⠊⢍⠙⠜⠽⣳⢯⣿⣳ ⠄<br>
+⠄⢕⠕⠁⣁⢬⢬⣌⠆⠅⢯⡻⣜⢷⠁⠌⡼⠲⠺⢮⡆⡉⢹⣺⣽ ⠄<br>
+⠄⠄⡀⢐⠄⠄⠄⠈⠳⠁⡂⢟⣞⡏⠄⡹⠄⠄⠄⠄⠈⣺⡐⣞⣾ ⠄<br>
+⠄⢰⡳⡹⢦⣀⣠⡠⠤⠄⡐⢝⣾⣳⣐⣌⠳⠦⠤⠤⣞⢼⢽⣻⡷ ⠄<br>
+⠄⢸⣚⢆⢄⣈⠨⢊⢐⢌⠞⣞⣞⡗⡟⡾⣝⢦⣳⡳⣯⢿⣻⣽⣟ ⠄<br>
+⠄⠘⡢⡫⢒⠒⣘⠰⣨⢴⣸⣺⣳⢥⢷⣳⣽⣳⢮⢝⢽⡯⣿⣺⡽ ⠄<br>
+⠄⠄⠁⠪⠤⢑⢄⢽⡙⢽⣺⢾⢽⢯⡟⡽⣾⣎⡿⣮⡳⣹⣳⣗⠇ ⠄<br>
+⠄⠄⠄⠁⠄⡸⡡⠑⠤⣠⡑⠙⠍⡩⡴⣽⡗⣗⣟⣷⣫⢳⢕⡏ ⠄⠄<br>
+⠄⠄⠄⠄⢈⡇⡇⡆⡌⡀⡉⠫⡯⢯⡫⡷⣽⣺⣗⣟⡾⡼⡺ ⠄⠄⠄<br>
+⠄⠄⠄⠄⡮⡎⡎⡎⣞⢲⡹⡵⡕⣇⡿⣽⣳⣟⣾⣳⡯⠉ ⠄⠄⠄⠄<br>
+⠄⠄⠄⠄⢯⡣⡣⡣⡣⡣⣗⡽⣽⣳⢯⢷⣳⣻⣺⣗⡇ ⠄⠄⠄⠄⠄<br>
+⠄⠄⠄⠄⠰⡙⠺⢪⢪⡺⡵⣯⣗⡯⡿⣽⢽⢾⣳⠏ ⠄⠄⠄⠄⠄⠄<br>
+⠄⠄⠄⠄⠄⠐⠢⠄⣀⣀⢉⠊⣊⣉⡬⡶⡻⣝⡞ ⠄⠄⠄⠄⠄⠄⠄<br>
+⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠙⢙⢑⢹⣘⠮⠛⠈ ⠄⠄⠄⠄⠄⠄⠄⠄<br>
+⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠂⠁⠑⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄<br>
+</p>
+<div id="gambling"></div>
+<div id="hand"></div>
+<div id="handDiscard">
+  <!--
+  5 checkmarks and a button
+
+  -->
+  <input type="checkbox" id="discard1">
+  <input type="checkbox" id="discard2">
+  <input type="checkbox" id="discard3">
+  <input type="checkbox" id="discard4">
+  <input type="checkbox" id="discard5">
+  <button type="button" onclick="
+  try { 
+    discardCards(playerHand) 
+  } catch(e) { 
+    document.getElementById('errorMessage').innerHTML = 'the monke thinks you are cheating and has refused to play this hand<br><sub><sub>there was an error that occured (apologies)</sub></sub>' 
+  }
+  " id="discard-button">DISCARD AND BET</button>
+  <div id="errorMessage"></div>
+</div>
+<br>
+<div id="monkeHand">what is monke holding?</div>
+
+<script src="./gamble-engine.js"></script>
+<script src="./gamble-betting.js"></script>
+<script>
+  document.getElementById("discard1").checked = false;
+  document.getElementById("discard2").checked = false;
+  document.getElementById("discard3").checked = false;
+  document.getElementById("discard4").checked = false;
+  document.getElementById("discard5").checked = false;
+
+  // all the damn functions to a different function
+  // localStorage.setItem('bal', 5000);
+  bankruptcy();
+
+  localStorage.setItem('bet', 0);
+  revealBal();
+
+  // 2-10 = 2 to 10; 11-13 = jack/queen/king; 14 = ace
+  let cards = [
+    [2, 0],
+    [3, 0],
+    [4, 0],
+    [5, 0],
+    [6, 0],
+    [7, 0],
+    [8, 0],
+    [9, 0],
+    [10, 0],
+    [11, 0],
+    [12, 0],
+    [13, 0],
+    [14, 0],
+    [2, 1],
+    [3, 1],
+    [4, 1],
+    [5, 1],
+    [6, 1],
+    [7, 1],
+    [8, 1],
+    [9, 1],
+    [10, 1],
+    [11, 1],
+    [12, 1],
+    [13, 1],
+    [14, 1],
+    [2, 2],
+    [3, 2],
+    [4, 2],
+    [5, 2],
+    [6, 2],
+    [7, 2],
+    [8, 2],
+    [9, 2],
+    [10, 2],
+    [11, 2],
+    [12, 2],
+    [13, 2],
+    [14, 2],
+    [2, 3],
+    [3, 3],
+    [4, 3],
+    [5, 3],
+    [6, 3],
+    [7, 3],
+    [8, 3],
+    [9, 3],
+    [10, 3],
+    [11, 3],
+    [12, 3],
+    [13, 3],
+    [14, 3]
+  ];
+
+  let playerHand = [];
+  let monkeHand = [];
+
+  // player pre discard evaluation
+  // deal, sort, eval player hand
+
+  playerHand = dealCards(playerHand);
+  playerHand = sortHand(playerHand);
+  let playerHandEval = evalHand(playerHand);
+
+  monkeHand = dealCards(monkeHand);
+  monkeHand = sortHand(monkeHand);
+  let monkeHandEval = evalHand(monkeHand);
+
+  // post player hand to html
+  document.getElementById('hand').innerHTML = `<p>you are holding => ${ makeHandLookGood(playerHand) } => ${ playerHandEval[0] }</p>`;
+
+  // bruh
+  // player discards on button press
+  // discardCards() ???
+
+  // player post discard evaluation
+  // move to discardCards in !monke
+
+  // -- //
+
+  // discard
+  // monke gets to discard ${ 1d10 w/ disadvantage } times
+</script>
+</body>
+</html>

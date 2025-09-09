@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="../favicon.ico" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="application-name" content="Fluidity" />
+  <meta name="description" content="An accordion based startpage." />
+  <meta name="author" content="PrettyCoffee" />
+  <link rel="apple-touch-icon" href="../logo192.png" />
+  <link rel="manifest" href="../manifest.json" />
+  <title>~/click-the-h.html</title>
+  <link href="../static/css/jank.css" rel="stylesheet" />
+
+  <script src="./click-the-h.js"></script>
+
+
+  <style>
+    .clickable { cursor: pointer; }
+    #h { position: absolute; }
+    #game-container { height: 1200px; }
+  </style>
+
+</head>
+<body>
+  <div id="game-container">
+    <div id="score-container">
+      <span>Score: <span id="score">0</span></span><br>
+      <span>High Score: <span id="high-score">0</span></span><br>
+      <a href="../index.html">Go back</a>
+    </div>
+    
+    <div id="h" style="cursor: pointer;">H</div>
+    <div style="margin-bottom: 0;"></div>
+  </div>
+</body>
+</html>

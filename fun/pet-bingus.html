@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="./favicon.ico" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="application-name" content="Fluidity" />
+  <meta name="description" content="An accordion based startpage." />
+  <meta name="author" content="PrettyCoffee" />
+  <link rel="apple-touch-icon" href="../logo192.png" />
+  <link rel="manifest" href="../manifest.json" />
+  <title>~/pet-bingus.html</title>
+  <link href="../static/css/jank.css" rel="stylesheet" />
+
+  <style>
+    html, body { 
+      height: 1200px;
+    }
+
+    .clickable { cursor: pointer; }
+
+    #pet {
+      height: auto;
+      position: relative;
+      left: 50%;
+      top: 25%;
+      margin-left: -150px;
+      margin-top: -150px;
+    }
+
+    .counter-container {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      text-align: right;
+    }
+
+    .goback {
+      top: 0%;
+    }
+
+    .reset-link {
+      display: block;
+      font-size: 0.8rem;
+      color: #888;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .reset-link:hover {
+      color: #444;
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const pet = document.getElementById('pet');
+      const counter = document.getElementById('counter');
+      const resetLink = document.getElementById('reset-counter');
+
+      let clicks = localStorage.getItem('clicks') || 0;
+      counter.textContent = `Bingus has been pet ${clicks} times!`;
+
+      pet.addEventListener('click', () => {
+        clicks++;
+        counter.textContent = `Bingus has been pet ${clicks} times!`;
+        localStorage.setItem('clicks', clicks);
+      });
+
+      resetLink.addEventListener('click', () => {
+        clicks = 0;
+        localStorage.setItem('clicks', clicks);
+        counter.textContent = `Bingus has been pet 0 times!`;
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="counter-container">
+    <div class="counter" id="counter"></div>
+    <span id="reset-counter" class="reset-link">reset counter</span>
+  </div>
+
+  <a href="../index.html" style="margin-top: 0px; position: absolute;">go back</a>
+  <img src="../static/media/this-is-bingus.jpeg" alt="bingus" id="pet" class="clickable">
+</body>
+</html>
