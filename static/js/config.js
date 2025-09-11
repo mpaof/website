@@ -7,7 +7,7 @@ const config = {
         { label: "Hacker News", value: "https://news.ycombinator.com/" },
         { label: "Are You Lost?", value: "https://mpaof-lost.carrd.co/" },
         { label: "", value: "" },
-        { label: "IT - DO NOT TOUCH", value: "./fun/services.html" }
+        { label: "IT - DO NOT TOUCH", value: "https://mpaof-lost.carrd.co/" }
       ]
     },
     {
