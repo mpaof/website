@@ -4,39 +4,43 @@ const config = {
       title: "Useful",
       links: [
         { label: "Internet Speed Test", value: "https://speedtest.net/" },
+        { label: "JavaScript Playground", value: "https://jsfiddle.net/" },
+        { label: "Linux Command Manual", value: "https://man7.org/linux/man-pages/man1/man.1.html" },
+        { label: "Networking Cheat Sheet", value: "https://www.geeksforgeeks.org/computer-networks/computer-network-cheat-sheet/" },
+        { label: "Self Hosting News", value: "https://selfh.st/" },
         { label: "Hacker News", value: "https://news.ycombinator.com/" },
-        { label: "Are You Lost?", value: "https://mpaof-lost.carrd.co/" },
-        { label: "", value: "" },
-        { label: "IT - DO NOT TOUCH", value: "https://mpaof-lost.carrd.co/" }
+      ]
+    },
+    {
+      title: "Also Useful",
+      links: [
+        { label: "Wikipedia", value: "https://www.wikipedia.org/" },
+        { label: "Hemingway App", value: "https://hemingwayapp.com/" },
+        { label: "Wolfram Alpha", value: "https://www.wolframalpha.com/" },
+        { label: "Naming Schemes", value: "https://namingschemes.com/Main_Page" },
+        { label: "Spotify", value: "https://open.spotify.com/" },
+        { label: "More Links", value: "" },
       ]
     },
     {
       title: "Fun!",
       links: [
         { label: "Gambling", value: "./fun/gamble.html" },
-        { label: "Click the H!", value: "./fun/click-the-h.html" },
         { label: "Pet Bingus", value: "./fun/pet-bingus.html" },
-        { label: "Fake Pinterest", value: "./fake-pinterest/index.html" },
-        { label: "Carrd", value: "https://mpaof.carrd.co/" }
+        { label: "Carrd", value: "https://mpaof.carrd.co/" },
+        { label: "/r/unixporn", value: "https://www.reddit.com/r/unixporn/hot" },
+        { label: "/r/ikeafreshballs", value: "https://www.reddit.com/r/ikeafreshballs/hot" },
+        { label: "/r/evilautism", value: "https://www.reddit.com/r/evilautism/hot" }
       ]
     },
     {
-      title: "Also Me",
+      title: "(Mostly) Me",
       links: [
-        { label: "Github", value: "https://www.github.com/mpaof/" },
-        { label: "Twitch", value: "https://www.twitch.tv/mpaof" },
-        { label: "Youtube", value: "https://www.youtube.com/@mypantsareonfire420" },
-        { label: "Spotify", value: "https://open.spotify.com/user/vstswkxcupgobjl65o1a966lw?si=a67948e15a404d03" }
-      ]
-    },
-    {
-      title: "Cool People",
-      links: [
-        { label: "Vigxr Mxrtis", value: "https://vigxrmxrtis.carrd.co/" },
-        { label: "Worm", value: "https://strwbrrywrm.carrd.co/" },
-        { label: "frankguileless.tumblr.com", value: "https://frankguileless.tumblr.com" },
-        { label: "It's Fine Company", value: "https://itsfine.company" },
-        { label: "Startpage gotten from:", value: "https://github.com/PrettyCoffee/fluidity" }
+        { label: "My Github", value: "https://www.github.com/mpaof/" },
+        { label: "My Twitch", value: "https://www.twitch.tv/mpaof" },
+        { label: "My Youtube", value: "https://www.youtube.com/@mypantsareonfire420" },
+        { label: "My Spotify", value: "https://open.spotify.com/user/vstswkxcupgobjl65o1a966lw?si=a67948e15a404d03" },
+        { label: "Webpage Source", value: "https://github.com/PrettyCoffee/fluidity" }
       ]
     }
   ],
