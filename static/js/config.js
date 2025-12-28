@@ -19,7 +19,7 @@ const config = {
         { label: "Wolfram Alpha", value: "https://www.wolframalpha.com/" },
         { label: "Naming Schemes", value: "https://namingschemes.com/Main_Page" },
         { label: "Spotify", value: "https://open.spotify.com/" },
-        { label: "More Links", value: "" },
+        { label: "More Links", value: "./index-more-links.html" },
       ]
     },
     {
